@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Change R5AC-PTMP. Example: UniFi UAP-AC-HD -->
+<title>R5AC-PTMP Quick Start Guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../source/main/image/favicon.ico">
+
+
+<link rel="stylesheet" href="../source/main/css/main.css" media="all">
+<link rel="stylesheet" href="../source/main/css/content.css" media="all">
+<link rel="stylesheet" href="../source/main/css/final.css" media="all">
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+<!--Tip begin-->	
+<div id="Tip"><div class="arrow_box"><a class="closebtn" onClick="closeTip()">&times;</a><p>Click for<br />Table of Contents</p></div></div>
+<!--Tip end-->
+<div id="NAV" >
+<!--Side NAV begin-->
+	<a class="closebtn" onClick="closeNav()">&times;</a>
+<!-- Change Cover Image with Cover_Image_template.png. -->
+	<img src="image/R5AC-PTMP_Cover_Image.png" alt="" class="CoverImg"/>
+<!-- Change Logo Image with Logo_template.png. -->
+	<img class="Logo" src="image/R5AC-PTMP_Logo.png" alt=""/>
+<!-- Change Description with @Description@ -->
+	<h6>5 GHz airMAX® AC BaseStation with airPrism® Active RF Filtering Technology</h6>
+<!-- Change Model with R5AC-PTMP -->
+	<h6>Model: R5AC-PTMP</h6>
+	
+	<p>Table&nbsp;of&nbsp;Contents</p>
+	
+<!--Side Table of Contents begin-->	
+<!--Insert Table of Content here - begin-->
+	<ul id="mySidenav">
+			<li class="active"><a class="tablinks" href="#_idTextAnchor000">Package Contents</a></li>
+			<li><a class="tablinks" href="#_idTextAnchor001">Hardware Overview</a></li>
+			<li><a class="tablinks" href="#_idTextAnchor002">Hardware Installation</a></li>
+			<li><a class="tablinks" href="#_idTextAnchor003">Connecting Power</a></li>
+			<li><a class="tablinks" href="#_idTextAnchor004">Accessing airOS</a></li>
+			<li><a class="tablinks" href="#_idTextAnchor005">Installer Compliance Responsibility</a></li>
+			<li><a class="tablinks" href="#_idTextAnchor006">Specifications</a></li>
+<li><a class="tablinks" href="#SafetyNotices">Safety Notices</a></li>
+<li><a class="tablinks" href="#ElectricalSafetyInformation">Electrical Safety Information</a></li>
+<li><a class="tablinks" href="#LimitedWarranty">Limited Warranty</a></li>
+<li><a class="tablinks" href="#Compliance">Compliance</a></li>
+<li><a class="tablinks" href="#DeclarationOfConformity">Declaration of Conformity</a></li>
+<li><a class="tablinks" href="#OnlineResources">Online Resources</a></li>
+		</ul>
+<!--Insert Table of Content here - end-->	
+	&nbsp;<br>&nbsp;<br>
+</div>
+<!--Side Table of Contents end-->
+
+
+<!--Fixed Header begin-->
+<div class="Header"><span class="OpenTab" onClick="openNav()"><img src="image/TableMenu.gif" width="40" alt="menu"></span><span class="Title">R5AC-PTMP <span>Quick Start Guide</span></span></div> 
+<!--Fixed Header end-->
+
+
+<!--User Guide Content begin-->
+<div id="main">
+
+<div class="tabcontent">
+	
+ 
+	<h1><a class="anchor" id="_idTextAnchor000"></a>Package Contents</h1>
+
+	
+<!-- Pkg Contents begin-->
+	<div class="PackageContents">
+		<div class="EachItem"><table><tr><th><img src="image/R5AC-PTMP_front_pkg_contents_LAN.png" alt="" /></th></tr><tr>
+				<td>Rocket5ac PtMP</td>
+				</tr>
+			</table></div>
+		<div class="EachItem"><table><tr><th><img src="image/Contents_airGateway_PoE_smallFF.png" alt="" /></th></tr><tr>
+				<td>Gigabit PoE Adapter (24V, 0.5A)</td>
+				</tr>
+			</table></div>
+		<div class="EachItem"><table><tr><th><img src="image/power-cord_v2.png" alt="" /></th></tr><tr>
+				<td>Power Cord</td>
+				</tr>
+			</table></div>
+		
+		
+	  <div class="EndPackageContents"></div>
+	</div>
+<!-- Pkg Contents end-->		
+	
+<!--Paste A-->	
+
+	<h2>Installation Requirements</h2>
+		<ul>
+			<li>Shielded Category 5 (or above) cabling should be used for all wired Ethernet connections and should be grounded through the AC ground of the PoE.<p>We recommend that you protect your networks from harmful outdoor environments and destructive ESD events with industrial-grade, shielded Ethernet cable from Ubiquiti. For more details, visit <a href="https://www.ui.com/accessories/toughcable/" target="_blank">ui.com/toughcable</a></p></li>
+		</ul>
+		<h1><a class="anchor" id="_idTextAnchor001"></a>Hardware Overview</h1>
+		<p><img src="image/R5AC-PTMP_front_callouts.png" alt="" class="ImgResponsive80" /></p>
+	<p><img src="image/R5AC-PTMP_Ports_callouts.png" alt="" class="ImgResponsive80" /></p>
+	
+<!-- 1 column table begin -->
+<table class="TableBorder">
+<tbody>
+<tr>
+<th><img src="../source/main/image/Callout_1.png" alt="">
+  <p>RP-SMA Antenna Connectors</p></th>
+</tr>
+<tr>
+<td><p>Used to attach RF cables (not included).</p></td>
+</tr>
+<tr>
+  <th><img src="../source/main/image/Callout_2.png" alt="">
+    <p>LEDs</p></th>
+</tr>
+<tr>
+<td><p><span class="BlueBold">Signal </span>In airOS®, you can modify the wireless signal strength threshold values for each LED on the Wireless tab under Signal LED Thresholds. Each LED will light when the wireless signal strength is equal to or greater than the LED’s threshold value. The default values are shown below:</p>
+		<p><img src="image/Rocket_R2AC_Signal_LEDs.png" alt="" class="ImgResponsive35" /></p>
+		<p><span class="BlueBold">LAN </span>The LAN LED will light steady blue when an active Ethernet connection is made to the LAN port and flash when there is activity. </p>
+		<p><span class="BlueBold">Power </span>The Power LED will light blue when the device is connected to a power source.</p>
+</td>
+</tr>
+<tr>
+<th><img src="../source/main/image/Callout_3.png" alt=""><p>Additional LEDs</p></th>
+</tr>
+<tr>
+<td><p>Reserved for future use.</p></td>
+</tr>
+<tr>
+<th><img src="../source/main/image/Callout_4.png" alt=""><p>Reset Button</p></th>
+</tr>
+<tr>
+<td><p>To reset to factory defaults, press and hold the Reset button for more than 10 seconds while the device is already powered on. Alternatively, the device may be reset remotely via a Reset button located on the bottom of the Gigabit PoE adapter.</p></td>
+</tr>
+<tr>
+<th><img src="../source/main/image/Callout_5.png" alt="">
+  <p>LAN/PoE</p></th>
+</tr>
+<tr>
+<td><p>The Gigabit Ethernet port is used to connect the power and should be connected to the LAN and DHCP server.</p></td>
+</tr>
+</tbody>
+</table>
+<!-- 1 column table end -->
+
+		<h1><a class="anchor" id="_idTextAnchor002"></a>Hardware Installation</h1>
+		<p>The Rocket5ac PtMP is designed to mount directly onto a Ubiquiti airMAX Sector Antenna.</p>
+		<ol>
+			<li><p><img src="image/R5AC-PTMP_Remove_Port_Cover_LAN.png" alt="" class="ImgResponsive70" /></p></li>
+			<li><p><img src="image/R5AC-PTMP_Ethernet_LAN_RM5AC-PTMP.png" alt="" class="ImgResponsive70" /></p></li>
+			<li><p><img src="image/R5AC-PTMP_Replace_Port_Cover_LAN.png" alt="" class="ImgResponsive70" /></p></li>
+			<li><p><img src="image/R5AC-PTMP_Connect_Antenna_Cables_gold_connect.png" alt="" class="ImgResponsive60" /></p></li>
+			<li><p><span><img src="image/R5AC-PTMP_AM-M521-60-AC_Attach_Rocket_to_Rocket-Mount_Bracket.png" alt="" class="ImgResponsive40" /></span></p></li>
+			<li><p><span><img src="image/R5AC-PTMP_AM-M521-60-AC_Connect_RF_Cables_to_RF_Connectors_on_antenna_Bubble.png" alt="" class="ImgResponsive80" /></span></p></li>
+			<li><p><span><img src="image/R5AC-PTMP_AM-M521-60-AC_Slide_Protective_Shroud_Over_Rocket.png" alt="" class="ImgResponsive40" /></span></p></li>
+		</ol>
+		
+	<h1><a class="anchor" id="_idTextAnchor003"></a>Connecting Power</h1>
+		<table class="TableWarning">
+			<tbody>
+				<tr>
+					<th>
+						<p><span><span><img src="image/Warning_v2.png" alt="" /></span></span></p>
+					</th>
+					<td>
+						<p><span>WARNING:</span> The switch port must comply with the power specifications listed in this Quick Start Guide.</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p><img src="image/Connecting_Power_ES-48-750W_Tough_Cable_PoE_Symbol.png" alt="" class="ImgResponsive100" /></p>
+		<p class="TextCenter">OR</p>
+		<p><img src="image/SmallFF_Outdoor_to_POE_3_Illustrations.png" alt="" class="ImgResponsive100" /></p>
+		
+		<h1><a class="anchor" id="_idTextAnchor004"></a>Accessing airOS</h1>
+	
+<script src="../source/JS/EN/AccessingAirOS.js"></script>
+	
+		
+	<h1><a class="anchor" id="_idTextAnchor005"></a>Installer Compliance Responsibility</h1>
+		<p>Devices must be professionally installed and it is the professional installer&apos;s responsibility to make sure the device is operated within local country regulatory requirements.</p>
+		<p><img src="image/R5AC-PTMP_Wireless_AP_PTMP_3_in.png" alt="" class="ImgResponsive90" /></p>
+	<h2>Antenna</h2>
+		<p>Select your antenna from the list. If Calculate EIRP Limit is enabled, transmit output power is automatically adjusted to comply with the regulations of the applicable country. For a Custom antenna, Antenna Gain is entered manually. Note the requirements and antenna types listed below.</p>
+	<h2>Cable Loss (When applicable)</h2>
+		<p>Enter the cable loss in dB. Output power is adjusted to compensate for loss between the radio and the antenna. </p>
+		<p>This radio transmitter FCC ID: SWX-R5ACPTMP / IC: 6545A-R5ACPTMP has been approved by FCC / ISED Canada to operate with the antenna types listed below with the maximum permissible gain for each antenna type indicated. Antenna types not included in this list or having a gain greater than the maximum gain indicated for that type, are strictly prohibited for use with this device.</p>
+		<h2>Certified Antenna Types</h2>
+		<table class="TableSpecifications">
+			<tbody>
+				<tr class="DarkGrey">
+					<th width="40%">
+						<p><span>Antenna</span></p>
+					</th>
+					<td width="30%">
+						<p><span>Frequency</span></p>
+					</td>
+					<td width="30%">
+						<p><span>Gain</span></p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p><span>Omni</span></p>
+					</th>
+					<td>
+						<p><span>5 GHz</span></p>
+					</td>
+					<td>
+						<p><span>13 dBi</span></p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p><span>Sector</span></p>
+					</th>
+					<td>
+						<p><span>5 GHz</span></p>
+					</td>
+					<td>
+						<p><span>22 dBi</span></p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p><span>Dish</span></p>
+					</th>
+					<td>
+						<p><span>5 GHz</span></p>
+					</td>
+					<td>
+						<p><span>34 dBi</span></p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h1><a class="anchor" id="_idTextAnchor006"></a>Specifications</h1>
+		<table class="TableSpecifications">
+			<thead>
+				<tr>
+					<td colspan="2">
+						<p>Rocket5ac PtMP</p>
+					</td>
+				</tr></thead>
+			<tbody>
+				<tr>
+					<th width="40%">
+						<p>Dimensions</p>
+					</th>
+					<td width="60%">
+						<p>198.5 x 86.4 x 44.1 mm (7.82 x 3.40 x 1.74<span>&quot;</span>)</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Weight</p>
+					</th>
+					<td>
+						<p>295 g (10.41 oz)</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Operating Frequency</p>
+					</th>
+					<td>
+						<p>Worldwide: 5470 - 5875 MHz<br />USA: 5725 - 5850 MHz</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Networking Interface</p>
+					</th>
+					<td>
+						<p>(1) 10/100/1000 Ethernet Port</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>RF Connectors</p>
+					</th>
+					<td>
+						<p>(2) RP-SMA (Waterproof)</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>LEDs</p>
+					</th>
+					<td>
+						<p>Power, LAN, (4) Signal Strength, (5) Reserved</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Enclosure</p>
+					</th>
+					<td>
+						<p>Outdoor UV Stabilized Plastic</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Max. Power Consumption</p>
+					</th>
+					<td>
+						<p>8.5W</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Power Supply</p>
+					</th>
+					<td>
+						<p>24V, 0.5A Gigabit PoE Adapter (Included)</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Power Method</p>
+					</th>
+					<td>
+						<p>Passive PoE (Pairs 4, 5+; 7, 8 Return)</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Operating Temperature</p>
+					</th>
+					<td>
+						<p>-40 to 80° C (-40 to 176° F)</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Operating Humidity</p>
+					</th>
+					<td>
+						<p>5 to 95% Noncondensing</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>ESD/EMP Protection</p>
+					</th>
+					<td>
+						<p>± 24KV Contact / Air for Ethernet</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Shock and Vibrations</p>
+					</th>
+					<td>
+						<p>ETSI300-019-1.4</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>Certifications</p>
+					</th>
+					<td>
+						<p>CE, FCC, IC</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	<table class="TableSpecifications">
+			<thead>
+				<tr>
+					<td colspan="3">
+						<p>Operating Frequency (MHz)</p>
+					</td>
+				</tr></thead>
+			<tbody>
+				<tr>
+					<th width="40%">
+						<p>Worldwide</p>
+					</th>
+					<td colspan="2">
+						<p>5150 - 5875</p>
+					</td>
+				</tr>
+				<tr>
+					<th rowspan="2">
+						<p>US/CA</p>
+					</th>
+					<th width="30%">
+						<p>U-NII-2C:</p>
+					</th>
+					<td width="30%">
+						<p>5470 - 5725</p>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<p>U-NII-3:</p>
+					</th>
+					<td>
+						<p>5725 - 5850</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+<!--Disclaimer - begin-->
+<div class="Font_FivePT">
+<!-- Insert Safety Notice 2 warning JS file -->
+<script src="../source/JS/EN/SafetyNotices_2_Warning.js"></script>
+<!-- Insert Electrical Safety Information with Power Cord JS file -->
+<script src="../source/JS/EN/ElectricalSafetyInformation_with_PowerCord.js"></script>	
+<!-- Insert Limited Warranty JS file -->
+<script src="../source/JS/EN/LimitedWarranty.js"></script>	
+<!-- Insert Compliance Wireless version 2 JS file -->
+<script src="../source/JS/EN/Compliance_wireless_2.js"></script>	
+<h1><a class="anchor" id="DeclarationOfConformity"></a><a href="https://www.ui.com/compliance/" target="_blank" class="BlueBold" >Declaration of Conformity</a></h1><p style="height:30px"></p>	
+<!-- Insert Online Resources JS file -->
+<script src="../source/JS/EN/OnlineResources.js"></script>	
+		
+</div>	
+<!--Disclaimer - end-->
+</div>
+
+
+<!--Footer begin-->
+<div class="Footer">&copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Ubiquiti Inc. All rights reserved.</div>
+<!--Footer end-->
+
+<!--User Guide Content end-->
+
+
+</div>
+
+	
+
+
+
+<script>
+// Add the code below to Replace the Separation Distance
+$('#Replace li').each(function() {
+var text = $(this).text();
+$(this).text(text.replace('$SeparationDistance$', '20'));
+});		
+	
+function openNav() {
+	document.getElementById("NAV").style.left = "0";
+	document.getElementById("Tip").style.display = "none";
+}
+function closeNav() {
+	document.getElementById("NAV").style.left = "-301px";
+	document.getElementById("Tip").style.display = "none";
+}
+function closeTip() {
+	document.getElementById("Tip").className = 'hide';
+}
+
+setTimeout(function(){
+    document.getElementById('Tip').className = 'hide';
+}, 3000);
+	
+
+	
+	
+// Cache selectors
+var lastId,
+    topHeader = $("#Header"),
+	topMenu = $("#mySidenav"),
+    topMenuHeight = topHeader.outerHeight()+0,
+    // All list items
+    menuItems = topMenu.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+  var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+  $('html, body').stop().animate({ 
+      scrollTop: offsetTop
+  }, 300);
+  document.getElementById("NAV").style.left = "-301px";
+});
+
+// Bind to scroll
+$(window).scroll(function(){
+   // Get container scroll position
+   var fromTop = $(this).scrollTop()+topMenuHeight+20;
+   
+   // Get id of current scroll item
+   var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+   });
+   // Get the id of the current element
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+   
+   if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+         .parent().removeClass("active")
+         .end().filter("[href='#"+id+"']").parent().addClass("active");
+   }                   
+});
+	
+</script>
+	
+
+	
+</body>
+</html> 
